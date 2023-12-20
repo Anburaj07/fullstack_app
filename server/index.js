@@ -26,6 +26,16 @@ app.get("/surveys", async (req, res) => {
   }
 });
 
+app.get("/surveys/:id", async (req, res) => {
+    const {id}=req.params
+    try {
+      const surveyList = await surveyModel.find({_id:id});
+      res.status(200).json({ surveyList });
+    } catch (error) {
+      console.log("error:", error);
+    }
+  });
+
 app.post("/add-survey", async (req, res) => {
   try {
     const payload = req.body;
