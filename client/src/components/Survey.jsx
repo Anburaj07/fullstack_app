@@ -1,10 +1,12 @@
 import { Heading, Text } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Survey = ({ name, education, skills, gender, phone_Number, email }) => {
+const Survey = ({_id, name, education, skills, gender, phone_Number, email }) => {
+    const navigte=useNavigate()
   return (
-    <DIV>
+    <DIV onClick={()=>navigte(`/survey/${_id}`)}>
       <Heading as={"h3"} size={"md"}>Name: {name}</Heading>
       <Text>Education Level: {education}</Text>
       <Text>Skills: {skills}</Text>

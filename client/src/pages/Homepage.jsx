@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, Skeleton, Stack } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Survey from "../components/Survey";
@@ -22,7 +22,13 @@ const Homepage = () => {
   return (
     <div>
       <Heading marginTop={"25px"}>Survey List</Heading>
-      {loading && <div>Loading...</div>}
+      {loading && (
+        <Stack>
+          <Skeleton height="40px"/>
+          <Skeleton height="40px"/>
+          <Skeleton height="40px"/>
+        </Stack>
+      )}
 
       <SURVEYLIST>
         {data.map((el) => (
