@@ -24,9 +24,9 @@ const Homepage = () => {
       <Heading marginTop={"25px"}>Survey List</Heading>
       {loading && (
         <Stack>
-          <Skeleton height="40px"/>
-          <Skeleton height="40px"/>
-          <Skeleton height="40px"/>
+          <Skeleton height="40px" />
+          <Skeleton height="40px" />
+          <Skeleton height="40px" />
         </Stack>
       )}
 
@@ -48,4 +48,7 @@ const SURVEYLIST = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  div :hover {
+    cursor: pointer;
+  }
 `;
