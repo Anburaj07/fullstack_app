@@ -7,10 +7,14 @@ const Navbar = () => {
   return (
     <DIV>
       <Link to={"/"}>
-        <Heading size={"xl"} as={"h2"}>Survey Taking System</Heading>
+        <Heading size={"xl"} as={"h2"}>
+          Survey Taking System
+        </Heading>
       </Link>
       <Link to={"/add-survey"}>
-        <Heading size={"xl"} as={"h3"}>Add Survey</Heading>
+        <Heading size={"xl"} as={"h3"}>
+          Add Survey
+        </Heading>
       </Link>
     </DIV>
   );

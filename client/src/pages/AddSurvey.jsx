@@ -21,28 +21,29 @@ const AddSurvey = () => {
   const [gender, setGender] = useState("");
   const [phNo, setPhNo] = useState("");
   const [email, setEmail] = useState("");
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState("");
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     let obj = {
       name,
       education,
       skills,
-      gender:value,
-      phone_Number:+phNo,
+      gender: value,
+      phone_Number: +phNo,
       email,
     };
     console.log(obj);
-    axios.post("http://localhost:8080/add-survey",obj)
-    .then(res=>{
-        console.log(res.data)
-        navigate("/")
-    })
-    .catch(err=>{
-        console.log(err.message)
-    })
+    axios
+      .post("http://localhost:8080/add-survey", obj)
+      .then((res) => {
+        console.log(res.data);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
   return (
     <DIV>
@@ -73,7 +74,7 @@ const AddSurvey = () => {
         <FormControl>
           <FormLabel>Skills</FormLabel>
           <Select value={skills} onChange={(e) => setSkills(e.target.value)}>
-          <option value="">Select your Skill</option>
+            <option value="">Select your Skill</option>
             <option value="Singing">Singing</option>
             <option value="Dancing">Dancing</option>
             <option value="Drawing">Drawing</option>
