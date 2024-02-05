@@ -34,7 +34,6 @@ const AddSurvey = () => {
       phone_Number: +phNo,
       email,
     };
-    console.log(obj);
     axios
       .post("http://localhost:8080/add-survey", obj)
       .then((res) => {

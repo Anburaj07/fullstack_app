@@ -14,7 +14,6 @@ const Homepage = () => {
       .get("http://localhost:8080/surveys")
       .then((res) => {
         setLoading(false);
-        console.log("res.data.surveyList", res.data.surveyList);
         setData(res.data.surveyList);
       })
       .catch((err) => console.log(err));
